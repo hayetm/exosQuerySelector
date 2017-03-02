@@ -1,0 +1,28 @@
+.squares {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 218px
+}
+
+.text {
+    cursor: pointer
+}
+
+.squares .square {
+    border: 2px solid silver;
+    width: 100px;
+    height: 100px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+
+.squares .square:hover, .squares .square.is-active {
+    background: firebrick;
+}
+
+.squares .square:nth-child(even) {
+    margin-right: 0
+}

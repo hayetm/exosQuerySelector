@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+        <link rel="stylesheet" href="style.css" type="text/css">
+        <script src="../utility/utility.js"></script>
+        <script>
+            var app = (function app() {
+                "use strict";
+                var titre, elements, gererClicks, compterSquareActifs;
+
+                window.onload = function start() {
+                    var i;
+                    titre = document.getElementById("title_main");
+                    //console.log(titre);
+                    elements = selectAll(".text, .square");
+                    //console.log(element);
+                    //console.log(element.length);
+                    console.log(typeof(elements));
+                    for (var i=0; i<elements.length; i+=1) {
+                        //console.log(elements[i]);
+                        //console.log(elements[i].textContent);
+                        elements[i].onclick = gererClicks;
+                    };
+                };
+
+                gererClicks = function gererClicks() {
+                    //log("bonjour");
+                    //log(this);
+                    if (this.classList.contains("square")) {
+                        this.classList.toggle("is-active");
+                        compterSquareActifs();
+                        
+                    }
+                };
+                
+                
+               compterSquareActifs = function compterSquareActifs() {
+                   byId("nb_clicks").innerHTML = selectAll(".squares .is-active").length;
+               };
+         
+            
+            }());
+
+        </script>
+    </head>
+    <body>
+
+        <h1 id="title_main" class="title">hello : <span id="nb_clicks" class="text is-active">0</span>
+        <span>&nbsp;squares actifs...</span></h1>
+        <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid repellendus, harum tempore excepturi ab quia, quasi ipsa minus minima non, fugiat modi fuga nemo hic magni dicta accusamus natus et.</p>
+
+        <input type="text" id="saisie" class="input">
+        <ul class="liste">
+            <li class="item">a</li>
+            <li class="item">b</li>
+            <li class="item">c</li>
+        </ul>
+        <div class="squares">
+            <div class="square"></div> <!-- raccourci div.squares>div.square*6 -->
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+            
+        </div>
+        <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus voluptate molestiae, porro labore eius ab nam a doloremque facilis veritatis. Molestiae reiciendis dolorem consequatur, soluta maxime corporis, accusantium eveniet quia.</p>
+        <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio modi harum unde magni fugiat accusamus neque natus quidem! Est harum dicta dolore recusandae ea cum nam accusamus eius, facilis ex?</p>
+        <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus quas perferendis fugiat reiciendis maxime ipsam cupiditate architecto ut, quae aperiam, porro neque. Ratione minus sit, aliquam vitae ab voluptate omnis!</p>
+    </body>
+</html>
